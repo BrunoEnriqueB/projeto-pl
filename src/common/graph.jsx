@@ -104,11 +104,13 @@ function Graph({ x, y, restrictions, obj, returnResult }) {
 			appName='classic'
 			width='1200'
 			height='800'
+			editorBackgroundColor='red'
 			showToolBar={false}
 			showMenuBar={false}
 			showAlgebraInput={false}
 			enableShiftDragZoom={false}
 			enableLabelDrags={false}
+			
 			appletOnLoad={afterAppIsLoaded}
 		/>
 	);

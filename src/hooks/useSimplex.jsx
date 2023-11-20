@@ -34,7 +34,7 @@ export default function useSimplex() {
   const [resources, setResourcesState] = useState([]);
   const [consumptions, setConsumptionsState] = useState([]);
 
-  const [resultState, setResultState] = useState({"algorithms":[{"id":1,"algorithm":[["Z","x1","xf1","b"],[1,-5,0,0],[0,3,1,3]]},{"id":2,"algorithm":[["Z","x1","xf1","b"],[1,0,1.6666666666666665,5],[0,1,0.3333333333333333,1]]}],"solutions":[{"id":1,"basic_variables":[{"id":"xf1","quantity":3}],"non_basic_variables":[{"id":"x1","quantity":0}],"Z":0,"result":"not great"},{"id":2,"basic_variables":[{"id":"x1","quantity":1}],"non_basic_variables":[{"id":"xf1","quantity":0}],"Z":5,"result":"great"}]});
+  const [resultState, setResultState] = useState({});
 
   function addProduct(product) {
     product.id = getProductId();
@@ -189,7 +189,6 @@ export default function useSimplex() {
     addResource,
     resultState,
     addProduct,
-    consumptionQuantity,
     resourceDescription,
     consumptionResourceId,
     resourceUom,

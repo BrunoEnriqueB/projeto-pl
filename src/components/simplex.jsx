@@ -1,4 +1,5 @@
 import useSimplex from "../hooks/useSimplex";
+import SectionTitle from "./sectionTitle"
 
 export default function Simplex() {
   const {
@@ -222,7 +223,7 @@ export default function Simplex() {
                           )}`}</td>
                         </tr>
                       </table>
-                      <hr className="py-10"/>
+                      <hr className="py-10" />
                     </>
                   ))}
                 </div>
@@ -235,15 +236,6 @@ export default function Simplex() {
   );
 }
 
-const SectionTitle = ({ title }) => {
-  return (
-    <div className="grid grid-cols-12 items-center px-4">
-      <span className="col-span-1 text-lg text-zinc-50 font-bold">{title}</span>
-      <div className="col-span-11 border-t border-zinc-50 my-8"></div>
-    </div>
-  );
-};
-
 const ObjectiveFuncionSection = ({
   objective,
   setObjective,
@@ -251,27 +243,27 @@ const ObjectiveFuncionSection = ({
   setFoUom,
 }) => {
   return (
-    <div className="w-full px-4 pb-3 text-gray-500 max-w-sm space-y-4">
-      <div>
+    <div className="w-full px-4 pb-3 text-gray-500 grid grid-cols-3 space-x-4">
+      <div className="col-span-1">
         <label className="text-zinc-50">Objetivo:</label>
         <select
           name="objective"
           value={objective}
           onInput={(e) => setObjective(e.target.value)}
-          className="rounded-none border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400"
+          className="rounded-none border-transparent  appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400"
         >
           <option value="">Selecione...</option>
           <option value="MAX">Maximizar Lucro</option>
         </select>
       </div>
-      <div>
+      <div className="col-span-1">
         <label className="text-zinc-50">Unidade de medida:</label>
         <input
           type="text"
           name="uom_fo"
           value={foUom}
           onInput={(e) => setFoUom(e.target.value)}
-          className="rounded-none border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400"
+          className="rounded-none border-transparent  appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400"
           placeholder="Unidade de medida"
         />
       </div>
