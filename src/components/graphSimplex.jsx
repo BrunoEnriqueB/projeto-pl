@@ -63,7 +63,7 @@ export default function GraphSimplex() {
               <div>
                 <span className="text-zinc-50">
                   <strong>Coordenadas: </strong>
-                  X: {returnResult.coords[0]} Y: {returnResult.coords[0]}
+                  X: {returnResult.coords?.[0]} Y: {returnResult.coords?.[1]}
                 </span>
               </div>
             </div>
