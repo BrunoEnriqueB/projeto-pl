@@ -17,6 +17,9 @@ export default function GraphSimplex() {
     showGraph,
     GraphComponent,
     returnResult,
+    fo,
+    coordsX,
+    coordsY
   } = useGraphSimplex();
 
   return (
@@ -57,13 +60,13 @@ export default function GraphSimplex() {
             <div className="flex-col px-4 py-6">
               <div>
                 <span className="text-zinc-50">
-                  <strong>Função Objetiva:</strong> {returnResult.fo}
+                  <strong>Função Objetiva:</strong> {fo}
                 </span>
               </div>
               <div>
                 <span className="text-zinc-50">
                   <strong>Coordenadas: </strong>
-                  X: {returnResult.coords?.[0]} Y: {returnResult.coords?.[1]}
+                  X: {coordsX} Y: {coordsY}
                 </span>
               </div>
             </div>

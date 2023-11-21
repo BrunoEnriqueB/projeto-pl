@@ -16,6 +16,9 @@ export default function useGraphSimplex() {
   const [restrictions, setRestrictions] = useState([]);
   const [showGraph, setShowGraph] = useState(false);
   const [returnResult, setReturnResult] = useState({})
+  const [fo, setFo] = useState(0);
+  const [coordsX, setCoordsX] = useState(0)
+  const [coordsY, setCoordsY] = useState(0)
 
   const addRestriction = () => {
     setRestrictions((prev) => {
@@ -24,6 +27,13 @@ export default function useGraphSimplex() {
     });
     clearRestriction();
   };
+
+  const getResult = (result) => {
+    setReturnResult(result);
+    setFo(result.fo);
+    setCoordsX(result.coords[0]);
+    setCoordsY(result.coords[1])
+  }
 
   const clearRestriction = () => {
     setRestriction({
@@ -44,7 +54,7 @@ export default function useGraphSimplex() {
       <Graph
         obj={objective}
         restrictions={restrictions}
-        returnResult={setReturnResult}
+        returnResult={getResult}
         x={x}
         y={y}
       />
@@ -65,6 +75,9 @@ export default function useGraphSimplex() {
     GraphComponent,
     showGraph,
     proccessGraph,
-    returnResult
+    returnResult,
+    fo,
+    coordsX,
+    coordsY
   };
 }

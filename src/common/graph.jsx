@@ -6,6 +6,9 @@ function Graph({ x, y, restrictions, obj, returnResult }) {
 
 		api.setRounding('2');
 
+		restrictions = restrictions.map((restriction) => {
+			return restriction.replace('+-', '-');
+		});
 		restrictions.forEach((restriction, i) => {
 			api.evalCommand('R' + (i + 1) + ' = (' + restriction + ')');
 		});
@@ -106,12 +109,17 @@ function Graph({ x, y, restrictions, obj, returnResult }) {
 			height='800'
 			editorBackgroundColor='red'
 			showToolBar={false}
+			showToolBarHelp={false}
 			showMenuBar={false}
 			showAlgebraInput={false}
-			enableShiftDragZoom={false}
+			enableShiftDragZoom={true}
 			enableLabelDrags={false}
-			
+			showZoomButtons={true}
+			allowUpscale={true}
 			appletOnLoad={afterAppIsLoaded}
+			scale={2}
+			showLogging={false}
+			showFullscreenButton={true}
 		/>
 	);
 }
